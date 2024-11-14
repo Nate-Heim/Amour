@@ -1,0 +1,59 @@
+<!--Amour/Templates/base.html-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Amour - {% block title %}Eat my ass boys :P' 8====D{% endblock title %}</title><!--is for you-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+    <!-- Navbar I stole dis -->
+    <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <strong>Amour</strong>
+            </a>
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="/">Home</a>
+                <a class="navbar-item" href="/profile/">Profile</a>
+                <a class="navbar-item" href="/matches/">Matches</a>
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-light" href="/login/">Log In</a>
+                        <a class="button is-link" href="/signup/">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--I guess some bs to make up a body for ya fuckasses-->
+    <section class="section">
+        <div class="container">
+            {% block content %}
+            <!--we need some real actual shit to put here-->
+            {% endblock content %}
+        </div>
+    </section>
+
+    <!--bulmas template has a footer so we're gonna have one too-->
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <strong>Amour</strong> by <a href="#">Colin and his groupies</a>. We just started but were fucking HOT HOY HOT
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

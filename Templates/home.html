@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="hero is-info">
+    <div class="hero-body">
+        <p class="title">
+            Welcome to Amour!
+        </p>
+        <p class="subtitle">
+            Get suckin and fuckin today
+        </p>
+    </div>
+</div>
+<!--Gang ass columns I made mybe need maybe no -->
+<div class="columns is-multiline mt-5">
+    <div class="column is-one-third">
+        <div class="card">
+            <div class="card-image">
+                <figure class="image is-4by3">
+                    <!--Bulma function to insert an Image placeholder. Simply put in pathway to image archive and image name-->
+                    <img src="https://via.placeholder.com/300" alt="Placeholder image">
+                </figure>
+            </div>
+            <div class="card-content">
+                <p class="title is-5">Create a Profile</p>
+                <p>Sign up to start connecting today!</p>
+            </div>
+        </div>
+    </div>
+    <div class="column is-one-third">
+        <div class="card">
+            <div class="card-image">
+                <figure class="image is-4by3">
+                    <img src="https://via.placeholder.com/300" alt="Placeholder image">
+                </figure>
+            </div>
+            <div class="card-content">
+                <p class="title is-5">Discover Matches(Bitches)</p>
+                <p>Explore profiles and find people who share your interests.</p>
+            </div>
+        </div>
+    </div>
+    <div class="column is-one-third">
+        <div class="card">
+            <div class="card-image">
+                <figure class="image is-4by3">
+                    <img src="https://via.placeholder.com/300" alt="Placeholder image">
+                </figure>
+            </div>
+            <div class="card-content">
+                <p class="title is-5">Chat with your boo</p>
+                <p>Start conversations and build meaningful connections.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
