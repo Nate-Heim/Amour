@@ -1,16 +1,20 @@
 <!--Amour/Templates/base.html-->
 <!DOCTYPE html>
-<html>
+<html class=>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Amour - {% block title %}Eat my ass boys :P' 8====D{% endblock title %}</title><!--is for you-->
+    <title> Amour - {% block title %}Here is the idea place for our stuff{% endblock title %}</title><!--is for you-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
     <!-- Navbar I stole dis -->
-    <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+    <nav class="navbar is-dark" role="navigation" aria-label="main navigation" style="position: relative;">
         <div class="navbar-brand">
+            <a class="navbar-item">
+                <img src="./images/amour.png">
+            </a>
             <a class="navbar-item" href="/">
                 <strong>Amour</strong>
             </a>
@@ -31,27 +35,27 @@
             <div class="navbar-end">
                 <div class="navbar-item">
                     <div class="buttons">
-                        <a class="button is-light" href="/login/">Log In</a>
-                        <a class="button is-link" href="/signup/">Sign Up</a>
+                        <a class="btn btn-link nav-link" href="{% url 'login'%}">Log In</a>
+                        <a class="btn btn-link nav-link" href="{% url 'signup'%}">Sign Up</a>
                     </div>
                 </div>
             </div>
         </div>
     </nav>
-    <!--I guess some bs to make up a body for ya fuckasses-->
+    
     <section class="section">
         <div class="container">
             {% block content %}
-            <!--we need some real actual shit to put here-->
+            <!--we need some real actual stuff to put here-->
             {% endblock content %}
         </div>
     </section>
 
     <!--bulmas template has a footer so we're gonna have one too-->
     <footer class="footer">
-        <div class="content has-text-centered">
+        <div class="content has-text-centered" style="border:1px solid black;">
             <p>
-                <strong>Amour</strong> by <a href="#">Colin and his groupies</a>. We just started but were fucking HOT HOY HOT
+                <strong>Amour</strong> by <a href="#">Love Tech</a>. A company dedicated to making digital connections easier than before
             </p>
         </div>
     </footer>
