@@ -23,9 +23,6 @@
             <a class="navbar-item">
                 <img src="{% static 'static/amour.png' %}" alt="My image">
             </a>
-            <a class="navbar-item" href="/">
-                <b>Amour</b>
-            </a>
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
@@ -40,6 +37,17 @@
                     <a class="navbar-item" href="profileUserView.html">Profile</a>
                     <a class="navbar-item"href="matchPage.html">Matches</a>
                     <a class="navbar-item" href="chatPage.html">Chat</a>
+                <!-- Sign out Options included Here need to be fixed the link directs you to login and sign up-->
+                    <div class="navbar-end">
+                        <div class="navbar-item">
+                            <div class="buttons">
+                                <form action="{% url 'logout' %}" method="post">
+                                    {% csrf_token %}
+                                    <button type="submit">Log Out</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 {%else%}
             </div>
             
