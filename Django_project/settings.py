@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     "accounts",
     "debug_toolbar",
     "captcha",
+    # Extra App chat
+    "django_private_chat2.apps.DjangoPrivateChat2Config",
 ]
 
 MIDDLEWARE = [
@@ -56,9 +58,7 @@ MIDDLEWARE = [
     "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
-INTERNAL_IPS =[
-    "127.0.0.1"
-]
+INTERNAL_IPS = ["127.0.0.1"]
 
 ROOT_URLCONF = "Django_project.urls"
 
@@ -129,14 +129,13 @@ USE_TZ = True
 STATIC_URL = "static/"
 
 
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
-CRISPY_TEMPLATE_PACK ="bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 AUTH_USER_MODEL = "accounts.CustomUser"
 LOGIN_REDIRECT_URL = "home"

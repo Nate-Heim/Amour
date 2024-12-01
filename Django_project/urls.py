@@ -14,10 +14,11 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-#Amour/Django_project/urls.py
+
+# Amour/Django_project/urls.py
 from django.contrib import admin
-from django.urls import path, include
-import debug_toolbar 
+from django.urls import path, include, re_path
+import debug_toolbar
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -26,4 +27,7 @@ urlpatterns = [
     path("accounts/", include("django.contrib.auth.urls")),
     path("_debug_/", include(debug_toolbar.urls)),
     path("captcha/", include("captcha.urls")),
-] 
+    re_path(
+        r"", include("django_private_chat2.urls", namespace="django_private_chat2")
+    ),
+]
