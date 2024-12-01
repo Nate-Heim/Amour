@@ -24,5 +24,5 @@ class CustomUserChangeForm(UserChangeForm):
         )
 
 class CaptchatestForm(forms.Form):
-    myfield= forms.CharField(label="My Feild", max_length=100)
+    myfield= forms.CharField(label="My Field", max_length=100)
     captcha = CaptchaField()
