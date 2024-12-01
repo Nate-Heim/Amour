@@ -6,11 +6,11 @@
 <br>
 <hr>
 <br>
-<div class="container bg-secondary">
-<h2>Log In</h2>
+<div class="container" style="background: white; border: 2px solid black;">
+<h2 class="display-6">Log Into Your Amour Account</h2>
     <form method="post">{% csrf_token %}
         {{ form|crispy }}
-        <button class="btn btn-light ms-2" type="submit">Log In</button>
+        <button class="btn btn-secondary ms-2" type="submit">Log In</button>
     </form>
     
     <p>
