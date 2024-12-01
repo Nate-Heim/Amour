@@ -27,7 +27,5 @@ urlpatterns = [
     path("accounts/", include("django.contrib.auth.urls")),
     path("_debug_/", include(debug_toolbar.urls)),
     path("captcha/", include("captcha.urls")),
-    re_path(
-        r"", include("django_private_chat2.urls", namespace="django_private_chat2")
-    ),
+    re_path(r"", include("django_private_chat2.urls", namespace="django_private_chat2")),
 ]
