@@ -1,59 +1,65 @@
 {% extends "base.html" %}
 
+
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<div class="hero" style="border:2px solid black; background: #fd8cec">
-    <div class="hero-body">
-        <p class="title is-size-1">
-            Welcome to Amour!
-        </p>
-        <p class="subtitle">
-            A new type of of online dating experience where you can make real connections!
-        </p>
+{% load static %}
+<body>
+
+    <div class="hero" style="border:2px solid black; background: #fd8cec">
+        <div class="hero-body">
+            <center>
+                <p class="title display-1">
+                    Amour
+                </p>
+            </center>
+            <p class="subtitle" style="text: bold; ">
+                Créez votre histoire d'amour aujourd'hui
+            </p>
+        </div>
     </div>
-</div>
-<!--Gang ass columns I made mybe need maybe no -->
-<div class="columns is-multiline mt-5">
-    <div class="column is-one-third">
-        <div class="card">
-            <div class="card-image">
-                <figure class="image is-4by3">
-                    <!--Bulma function to insert an Image placeholder. Simply put in pathway to image archive and image name-->
-                    <img src="https://via.placeholder.com/300" alt="Placeholder image">
-                </figure>
+    <!--Gang ass columns I made mybe need maybe no -->
+    <div class="columns is-multiline mt-5">
+        <div class="column is-one-third">
+            <div class="card">
+                <div class="card-image">
+                    <figure class="image is-4by3">
+                        <img src="{% static 'static/stockImageTwo.png' %}" alt="My image">
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <p class="title is-5">Create a Profile</p>
+                    <p>Sign up to start connecting today!</p>
+                </div>
             </div>
-            <div class="card-content">
-                <p class="title is-5">Create a Profile</p>
-                <p>Sign up to start connecting today!</p>
+        </div>
+        <div class="column is-one-third">
+            <div class="card">
+                <div class="card-image">
+                    <figure class="image is-4by3">
+                        <img src="{% static 'static/stockImageOne.png' %}" alt="My image">
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <p class="title is-5">Discover Something Real!</p>
+                    <p>Explore profiles and find people who share your interests.</p>
+                </div>
+            </div>
+        </div>
+        <div class="column is-one-third">
+            <div class="card">
+                <div class="card-image">
+                    <figure class="image is-4by3">
+                        <img src="{% static 'static/stockImageThree.png' %}" alt="My image">
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <p class="title is-5">Start Chatting Today</p>
+                    <p>Start conversations and build meaningful connections.</p>
+                </div>
             </div>
         </div>
     </div>
-    <div class="column is-one-third">
-        <div class="card">
-            <div class="card-image">
-                <figure class="image is-4by3">
-                    <img src="https://via.placeholder.com/300" alt="Placeholder image">
-                </figure>
-            </div>
-            <div class="card-content">
-                <p class="title is-5">Discover Something Real!</p>
-                <p>Explore profiles and find people who share your interests.</p>
-            </div>
-        </div>
-    </div>
-    <div class="column is-one-third">
-        <div class="card">
-            <div class="card-image">
-                <figure class="image is-4by3">
-                    <img src="https://via.placeholder.com/300" alt="Placeholder image">
-                </figure>
-            </div>
-            <div class="card-content">
-                <p class="title is-5">Start Chatting Today</p>
-                <p>Start conversations and build meaningful connections.</p>
-            </div>
-        </div>
-    </div>
-</div>
+</body>
 {% endblock %}

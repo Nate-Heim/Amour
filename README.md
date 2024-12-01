@@ -48,5 +48,7 @@ I'm a good at making new friends.
 I'm a good at keeping in touch with old friends.
 
 I am a very good at living in the present moment.
+
 I am generally a morning person.
+
 I am often the life of the party.
