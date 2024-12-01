@@ -2,17 +2,17 @@ This is a Web Application Project to create a Dating App.
 
 Here are the survey questions:
 
-I prefer to be the planner in a relationship.
-I believe in love at first sight.
-I'm a morning person.
-I'm a spontaneous person.
-I'm a good listener.
-I'm a good cook.
-I enjoy watching sports.
-I'm a pet person.
-I enjoy traveling.
-I'm a romantic.
-I believe in soulmates.
+I prefer to be the planner in a relationship.\n
+I believe in love at first sight.\n
+I'm a morning person.\n
+I'm a spontaneous person.\n
+I'm a good listener.\n
+I'm a good cook.\n
+I enjoy watching sports.\n
+I'm a pet person.\n
+I enjoy traveling.\n
+I'm a romantic.\n
+I believe in soulmates.\n
 I'm a good dancer.
 I enjoy going to concerts.
 I prefer quiet nights in.
