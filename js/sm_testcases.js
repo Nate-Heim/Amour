@@ -11,7 +11,7 @@ function testSurveyMatcher() {
 
     const surveys2 = [
         [10, 20, 30],
-        [40, 50, 60], // Completely disjoint
+        [40, 50, 60], // Completely disjointed 
     ];
 
     const surveysEmpty = [];
