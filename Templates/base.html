@@ -12,6 +12,36 @@
     <link rel="stylesheet" href="{% static 'static/css/amourTitle.css' %}"></link>
     <link rel="icon" href="{% static 'static/heart.ico' %}">
 
+    <style>
+        /*Adding in some new "Valentine-esque" button ideas I had. Just using on password remake for now*/
+        .btn-valentine {
+            background-color: #ff69b4; /* Hot Pink */
+            color: white;
+            border-color: #ff1493; /* Deep Pink */
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .btn-valentine:hover {
+            background-color: #ff1493; /* Deep Pink on hover */
+            border-color: #ff69b4; /* Hot Pink border on hover */
+            color: white;
+        }
+
+        /* Zoolander Steel ;p */
+        .btn-steel {
+            background-color: #2b2b2b; /* Dark Gray Black */
+            color: #d3d3d3; /* Steel Gray Text */
+            border-color: #5a5a5a; /* Steel Gray Border */
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+        }
+
+        .btn-steel:hover {
+            background-color: #3a3a3a; /* Slightly Lighter Gray on Hover */
+            border-color: #7a7a7a; /* Lighter Steel Gray on Hover */
+            color: white; /* White Text on Hover */
+        }
+    </style>
+
 </head>
 
 <body style="background: #5d455f;">
@@ -20,7 +50,7 @@
     
     <nav class="navbar is-light is-fluid" role="navigation" aria-label="main navigation" style="position: relative; background: #fcfbf4">
         <div class="navbar-brand">
-            <a class="navbar-item">
+            <a class="navbar-item" href="{% url 'home' %}">
                 <img src="{% static 'static/amour.png' %}" alt="My image">
             </a>
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
