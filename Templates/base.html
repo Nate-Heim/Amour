@@ -64,7 +64,7 @@
             <div class="navbar-start">
                 <!-- if user.authenticated for these two to display in navbar -->
                 {% if user.is_authenticated %}
-                    <a class="navbar-item" href="profileUserView.html">Profile</a>
+                    <a class="navbar-item" href="{% url 'profile' %}">Profile</a>
                     <a class="navbar-item"href="matchPage.html">Matches</a>
                     <a class="navbar-item" href="chatPage.html">Chat</a>
                 <!-- Sign out Options included Here need to be fixed the link directs you to login and sign up-->
