@@ -1,4 +1,3 @@
-
 from django.shortcuts import render
 
 def chatPage(request, room_name):
