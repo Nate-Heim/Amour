@@ -1,10 +1,8 @@
 from pathlib import Path
 import os
 
-<<<<<<< HEAD
 
-=======
->>>>>>> HaidenChat
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -40,13 +38,11 @@ INSTALLED_APPS = [
     "captcha",  # Captcha Tool Used For Extra Security Measures
     "django_private_chat2.apps.DjangoPrivateChat2Config",  # Chat Functionality
     "channels",
-<<<<<<< HEAD
-]
-=======
+
     "chat", # CURRENTLY WORKING ON!!!
 
     ]
->>>>>>> HaidenChat
+
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -129,11 +125,10 @@ USE_TZ = True
 STATIC_URL = "static/"
 STATICFILES_DIRS = [BASE_DIR]
 
-<<<<<<< HEAD
+
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
-=======
->>>>>>> HaidenChat
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
@@ -145,11 +140,11 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 CHANNEL_LAYERS = {
     "default": {
-<<<<<<< HEAD
+
         "BACKEND": "channels_redis.core.RedisChannelLayer",
-=======
+
         "BACKEND": "channel.layers.InMemoryChannelLayer",
->>>>>>> HaidenChat
+
         "CONFIG": {
             "hosts": [("127.0.0.1", 6379)],
         },
@@ -161,23 +156,21 @@ AUTH_USER_MODEL = "accounts.CustomUser"
 
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
-<<<<<<< HEAD
-=======
+
 
 CELERY_BROKER_URL = 'amqp://localhost'
 
->>>>>>> HaidenChat
+
 
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"  # Backend email password reset until site is hosted
 
-<<<<<<< HEAD
+
 # Profile Picture related settings
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-=======
 
 #Profile Picture related settings
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
->>>>>>> HaidenChat
+
