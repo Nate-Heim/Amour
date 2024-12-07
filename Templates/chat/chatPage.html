@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %} Private Chat {% endblock %}
+
+{% block content %}
+<h2>Chat with {{ user_to_chat.username }}</h2>
+
+<div id="chat-log">
+    {% for message in messages %}
+        <div class="message">
+            <strong>{{ message.sender.username }}</strong> 
+            <span>{{ message.timestamp|date:"H:i" }}</span>: 
+            <p>{{ message.content }}</p>
+        </div>
+    {% endfor %}
+</div>
+
+<textarea id="chat-message-input" rows="3" placeholder="Type a message..."></textarea><br>
+<button id="chat-message-submit">Send</button>
+
+<script>
+    const roomName = "{{ user_to_chat.username }}";  // Room name is the target user for the private chat
+    const chatSocket = new WebSocket(
+        'ws://' + window.location.host + '/ws/chat/' + roomName + '/'
+    );
+
+    chatSocket.onmessage = function(e) {
+        const data = JSON.parse(e.data);
+        const chatLog = document.getElementById('chat-log');
+        const messageTime = new Date().toLocaleTimeString();
+        
+        // Display message
+        chatLog.innerHTML += `
+            <div class="message">
+                <strong>${data.username}</strong> 
+                <span>${messageTime}</span>: 
+                <p>${data.message}</p>
+            </div>
+        `;
+    };
+
+    chatSocket.onclose = function(e) {
+        console.error('Chat socket closed unexpectedly');
+    };
+
+    document.getElementById('chat-message-submit').onclick = function(e) {
+        const messageInput = document.getElementById('chat-message-input');
+        const message = messageInput.value;
+        chatSocket.send(JSON.stringify({
+            'message': message
+        }));
+        messageInput.value = '';  // Clear input field
+    };
+</script>
+{% endblock %}

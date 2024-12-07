@@ -1,9 +1,6 @@
 from pathlib import Path
 import os
-<<<<<<< HEAD
-=======
 
->>>>>>> profile
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -40,6 +37,8 @@ INSTALLED_APPS = [
     "captcha", # Captcha Tool Used For Extra Security Measures
     "django_private_chat2.apps.DjangoPrivateChat2Config", # Chat Functionality 
     "channels",
+    "chat", # CURRENTLY WORKING ON!!!
+
     ]
 
 MIDDLEWARE = [
@@ -123,8 +122,6 @@ USE_TZ = True
 STATIC_URL = "static/"
 STATICFILES_DIRS = [BASE_DIR]
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media') 
-MEDIA_URL = '/media/' 
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
@@ -135,27 +132,27 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 CHANNEL_LAYERS = {
-    'default': {
-        'BACKEND': 'channels_redis.core.RedisChannelLayer',
-        'CONFIG': {
-            "hosts": [('127.0.0.1', 6379)],
+    "default": {
+        "BACKEND": "channel.layers.InMemoryChannelLayer",
+        "CONFIG": {
+            "hosts": [("127.0.0.1", 6379)],
         },
     },
 }
+
 
 AUTH_USER_MODEL = "accounts.CustomUser"
 
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
-<<<<<<< HEAD
+
+CELERY_BROKER_URL = 'amqp://localhost'
+
 
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"  #Backend email password reset until site is hosted
 
-=======
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"  #Backend email password reset until site is hosted
 
 #Profile Picture related settings
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
->>>>>>> profile

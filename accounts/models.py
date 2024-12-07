@@ -1,14 +1,11 @@
 #Amour/accounts/models.py
 from django.contrib.auth.models import AbstractUser
-
 from django.db import models
 
 # Create your models here.
 class CustomUser(AbstractUser):
-<<<<<<< HEAD
-    
+
     age = models.PositiveIntegerField(null=True, blank=True)
-=======
     age = models.PositiveIntegerField(null=True, blank=True)
     Gender = models.CharField(max_length=10, null=True, blank=True)
 
@@ -35,4 +32,3 @@ class CustomUser(AbstractUser):
         blank=True,
     )
     
->>>>>>> profile

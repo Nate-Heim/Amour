@@ -19,9 +19,27 @@
 
 
 {% if user.is_authenticated %}
-<br> 
-    <div class="container is-fluid" style="border: 2px solid black;">
-        <p> Welcome Back {{user.username}}! You currently have 0 matches better luck next year! Update yo pictures cause they are not looking so great</p>
+<section class="section">
+    <div class="container welcome-container">
+      <h2 class="title display-4 center-text">Welcome to Amour</h2>
+      <div class="box" style="background: white;">
+        <p class="has-text-centered">
+          Welcome Back, <strong>{{user.username}}</strong>!<br>
+          You currently have <strong>0 matches</strong>. Better luck next year!<br>
+          Update your pictures because they’re not looking so great.
+        </p>
+      </div>
+
+      <div class="box">
+        <h5 class="subtitle is-5 center-text">Tips for Dating Success</h5>
+        <ol class="tips-list">
+          <li>Start putting yourself out there more.</li>
+          <li>Find an outfit that you feel good and confident in.</li>
+          <li>Don't be afraid to message first, but don't double text.</li>
+          <li>Find someone with common interests.</li>
+          <li>Be yourself.</li>
+        </ol>
+      </div>
     </div>
     {% else %}
         <hr>
