@@ -24,6 +24,7 @@ from accounts.views import profile_view
 from django.conf import settings
 from django.conf.urls.static import static
 
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("publicPages.urls")),
@@ -33,6 +34,7 @@ urlpatterns = [
     path("captcha/", include("captcha.urls")),
     re_path(r"", include("django_private_chat2.urls", namespace="django_private_chat2")),
     path('profile/', profile_view, name='profile'),
+
 ]
 
 #Think this needs to be in Django urls as well to serve the photo
