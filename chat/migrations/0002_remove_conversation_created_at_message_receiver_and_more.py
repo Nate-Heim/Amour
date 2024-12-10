@@ -22,7 +22,7 @@ class Migration(migrations.Migration):
             model_name="message",
             name="receiver",
             field=models.ForeignKey(
-                default=django.utils.timezone.now,
+                default=None,
                 on_delete=django.db.models.deletion.CASCADE,
                 related_name="received_messages",
                 to=settings.AUTH_USER_MODEL,

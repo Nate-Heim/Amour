@@ -39,8 +39,6 @@ INSTALLED_APPS = [
     "chat", # CURRENTLY WORKING ON!!!
 ]
 
-    
-
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -123,10 +121,6 @@ USE_TZ = True
 STATIC_URL = "static/"
 STATICFILES_DIRS = [BASE_DIR]
 
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-MEDIA_URL = "/media/"
-
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
@@ -139,7 +133,9 @@ CHANNEL_LAYERS = {
     "default": {
 
         "BACKEND": "channels_redis.core.RedisChannelLayer",
+
         "BACKEND": "channel.layers.InMemoryChannelLayer",
+
         "CONFIG": {
             "hosts": [("127.0.0.1", 6379)],
         },
@@ -152,12 +148,13 @@ AUTH_USER_MODEL = "accounts.CustomUser"
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
 
+
 CELERY_BROKER_URL = 'amqp://localhost'
-
-
-
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"  # Backend email password reset until site is hosted
 
 # Profile Picture related settings
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+
+
