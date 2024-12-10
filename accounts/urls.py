@@ -13,7 +13,7 @@ urlpatterns = [
     path("signup/", SignUpView.as_view(), name="signup"),
     path("captcha/", include("captcha.urls")),
     path('profile/', profile_view, name='profile'),
-    path('profile/edit/', views.edit_profile, name='profile_edit')
+    path('profile/edit/', views.edit_profile, name='profile_edit'),
 ]
 
 #Profile Pic related work (Under work by Colin DONT TOUCH!!)

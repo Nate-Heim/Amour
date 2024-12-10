@@ -1,0 +1,104 @@
+//json object with our questions made them booleans
+
+[
+    {
+      "question": "I prefer to be the planner in a relationship.",
+      "type": "boolean"
+    },
+    {
+      "question": "I believe in love at first sight.",
+      "type": "boolean"
+    },
+    {
+      "question": "I'm a morning person.",
+      "type": "boolean"
+    },
+    {
+      "question": "I'm a spontaneous person.",
+      "type": "boolean"
+    },
+    {
+      "question": "I'm a good listener.",
+      "type": "boolean"
+    },
+    {
+      "question": "I'm a good cook.",
+      "type": "boolean"
+    },
+    {
+      "question": "I enjoy watching sports.",
+      "type": "boolean"
+    },
+    {
+      "question": "I'm a pet person.",
+      "type": "boolean"
+    },
+    {
+      "question": "I enjoy traveling.",
+      "type": "boolean"
+    },
+    {
+      "question": "I'm a romantic.",
+      "type": "boolean"
+    },
+    {
+      "question": "I believe in soulmates.",
+      "type": "boolean"
+    },
+    {
+      "question": "I'm a good dancer.",
+      "type": "boolean"
+    },
+    {
+      "question": "I enjoy going to concerts.",
+      "type": "boolean"
+    },
+    {
+      "question": "I prefer quiet nights in.",
+      "type": "boolean"
+    },
+    {
+      "question": "I'm a good conversationalist.",
+      "type": "boolean"
+    },
+    {
+      "question": "I'm a good problem-solver.",
+      "type": "boolean"
+    },
+    {
+      "question": "I'm good at giving advice.",
+      "type": "boolean"
+    },
+    {
+      "question": "I'm good at keeping secrets.",
+      "type": "boolean"
+    },
+    {
+      "question": "I'm good at giving compliments.",
+      "type": "boolean"
+    },
+    {
+      "question": "I'm good at taking compliments.",
+      "type": "boolean"
+    },
+    {
+      "question": "I'm good at making new friends.",
+      "type": "boolean"
+    },
+    {
+      "question": "I'm good at keeping in touch with old friends.",
+      "type": "boolean"
+    },
+    {
+      "question": "I am very good at living in the present moment.",
+      "type": "boolean"
+    },
+    {
+      "question": "I am generally a morning person.",
+      "type": "boolean"
+    },
+    {
+      "question": "I am often the life of the party.",
+      "type": "boolean"
+    }
+  ]

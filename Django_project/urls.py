@@ -36,6 +36,7 @@ urlpatterns = [
     re_path(r"", include("django_private_chat2.urls", namespace="django_private_chat2")),
     path('profile/', profile_view, name='profile'),
     path('chat/', include('chat.urls')),
+    path('survey/', include("survey.urls")),
 ]
 
 #Think this needs to be in Django urls as well to serve the photo
