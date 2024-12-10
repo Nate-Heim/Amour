@@ -19,37 +19,56 @@
 <button id="chat-message-submit">Send</button>
 
 <script>
-    const roomName = "{{ user_to_chat.username }}";  // Room name is the target user for the private chat
-    const chatSocket = new WebSocket(
-        'ws://' + window.location.host + '/ws/chat/' + roomName + '/'
-    );
+    // Ensure roomName is valid
+    const roomName = "{{ user_to_chat.username|default:'' }}";
+    if (!roomName) {
+        console.error("Error: Room name is invalid or empty. WebSocket connection will not be established.");
+        alert("Unable to connect to the chat. The target user is invalid.");
+    } else {
+        // Debug WebSocket URL
+        const wsUrl = 'ws://' + window.location.host + '/ws/chat/' + roomName + '/';
+        console.log('WebSocket URL:', wsUrl);
 
-    chatSocket.onmessage = function(e) {
-        const data = JSON.parse(e.data);
-        const chatLog = document.getElementById('chat-log');
-        const messageTime = new Date().toLocaleTimeString();
-        
-        // Display message
-        chatLog.innerHTML += `
-            <div class="message">
-                <strong>${data.username}</strong> 
-                <span>${messageTime}</span>: 
-                <p>${data.message}</p>
-            </div>
-        `;
-    };
+        // Establish WebSocket connection
+        const chatSocket = new WebSocket(wsUrl);
 
-    chatSocket.onclose = function(e) {
-        console.error('Chat socket closed unexpectedly');
-    };
+        chatSocket.onmessage = function(e) {
+            const data = JSON.parse(e.data);
+            const chatLog = document.getElementById('chat-log');
+            const messageTime = new Date().toLocaleTimeString();
 
-    document.getElementById('chat-message-submit').onclick = function(e) {
-        const messageInput = document.getElementById('chat-message-input');
-        const message = messageInput.value;
-        chatSocket.send(JSON.stringify({
-            'message': message
-        }));
-        messageInput.value = '';  // Clear input field
-    };
+            // Display the received message
+            chatLog.innerHTML += `
+                <div class="message">
+                    <strong>${data.username}</strong> 
+                    <span>${messageTime}</span>: 
+                    <p>${data.message}</p>
+                </div>
+            `;
+        };
+
+        chatSocket.onclose = function(e) {
+            console.error('Chat socket closed unexpectedly');
+        };
+
+        chatSocket.onerror = function(e) {
+            console.error('WebSocket error occurred:', e);
+        };
+
+        document.getElementById('chat-message-submit').onclick = function(e) {
+            const messageInput = document.getElementById('chat-message-input');
+            const message = messageInput.value;
+
+            // Send message only if it's non-empty
+            if (message.trim() !== '') {
+                chatSocket.send(JSON.stringify({
+                    'message': message
+                }));
+                messageInput.value = ''; // Clear input field
+            } else {
+                console.warn('Cannot send an empty message.');
+            }
+        };
+    }
 </script>
 {% endblock %}
