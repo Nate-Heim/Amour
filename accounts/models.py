@@ -32,7 +32,3 @@ class CustomUser(AbstractUser):
         null=True,
         blank=True,
     )
-<<<<<<< HEAD
-=======
-    
->>>>>>> HaidenChat
