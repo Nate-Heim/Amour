@@ -21,8 +21,8 @@ def profile_view(request):
         user.age = request.POST.get('age')
         user.Gender = request.POST.get('Gender')
         user.desires = request.POST.get('desires')
-        if request.FILES.get('profile_picture'):
-            user.profile_picture = request.FILES['profile_picture']
+        if request.FILES.get('profile_pic'):
+            user.profile_pic = request.FILES['profile_pic']
         user.save()
         return redirect('profile')
     
@@ -36,8 +36,8 @@ def edit_profile(request):
         user.age = request.POST.get('age')
         user.Gender = request.POST.get('Gender')
         user.desires = request.POST.get('desires')
-        if request.FILES.get('profile_picture'):
-            user.profile_picture = request.FILES['profile_picture']
+        if request.FILES.get('profile_pic'):
+            user.profile_pic = request.FILES['profile_pic']
         user.save()
         messages.success(request, 'Profile updated successfully!')
         return redirect('profile')  # Redirect to the profile view after saving

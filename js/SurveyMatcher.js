@@ -3,7 +3,6 @@
 //To call use the SurveyMatcher.matchSurveys(surveys) function with an array of surveys as input. 
 //The function will return an array of objects, each containing the indices of the surveys that are considered similar based on the Jaccard 
 //similarity threshold of 0.75. This will probably be changed in the future
-
 class SurveyMatcher {
     static NUM_HASH_FUNCTIONS = 100;
     static BANDS = 10;
@@ -47,7 +46,6 @@ class SurveyMatcher {
                 }
             }
         }
-
         return candidatePairs;
     }
 
@@ -90,5 +88,6 @@ const surveys = [
     [2, 3, 5],
     [1, 4, 6]
 ];
+
 const matches = SurveyMatcher.matchSurveys(surveys);
 console.log("Matched Surveys:", matches);
