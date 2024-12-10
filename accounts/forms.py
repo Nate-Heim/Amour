@@ -4,9 +4,6 @@ from .models import CustomUser
 from django import forms
 from captcha.fields import CaptchaField
 
-
-
-
 class CustomerUserCreationForm(UserCreationForm):
     captcha = CaptchaField()#adds the captcha
     

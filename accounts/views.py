@@ -5,6 +5,7 @@ from django.shortcuts import render, redirect
 from .forms import CustomerUserCreationForm, ProfileForm
 from django.contrib.auth.decorators import login_required
 from accounts.models import CustomUser
+from django.contrib import messages
 
 class SignUpView(CreateView):
     form_class = CustomerUserCreationForm
@@ -27,3 +28,19 @@ def profile_view(request):
     
     desires_choices = CustomUser._meta.get_field('Desires').choices
     return render(request, 'profile.html', {'desires_choices': desires_choices})
+
+@login_required
+def edit_profile(request):
+    if request.method == 'POST':
+        user = request.user
+        user.age = request.POST.get('age')
+        user.Gender = request.POST.get('Gender')
+        user.desires = request.POST.get('desires')
+        if request.FILES.get('profile_picture'):
+            user.profile_picture = request.FILES['profile_picture']
+        user.save()
+        messages.success(request, 'Profile updated successfully!')
+        return redirect('profile')  # Redirect to the profile view after saving
+
+    desires_choices = CustomUser._meta.get_field('Desires').choices
+    return render(request, 'profileEdit.html', {'user': request.user, 'desires_choices': desires_choices})

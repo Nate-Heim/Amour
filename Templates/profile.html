@@ -1,3 +1,4 @@
+<!--Amour/Templates/profileEdit.html-->
 {% extends "base.html" %}
 {% load static %}
 {% block title %}Profile{% endblock title %}
@@ -27,7 +28,7 @@
                 <p><strong>Gender:</strong> {{ user.Gender }}</p>
                 <p><strong>Looking for:</strong> {{ user.Desires|capfirst }}</p>
                 <!-- Optionally, you can add a button to navigate to the edit profile page -->
-                <a href="/" class="btn btn-valentine">Edit Profile</a>
+                <a href="{% url 'profile_edit' %}" class="btn btn-valentine">Edit Profile</a>
             </div>
         </div>
     </div>
