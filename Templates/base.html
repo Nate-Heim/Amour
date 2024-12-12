@@ -40,17 +40,39 @@
             border-color: #7a7a7a; /* Lighter Steel Gray on Hover */
             color: white; /* White Text on Hover */
         }
+        .roundcorners{
+            border-radius: 25px;
+            background: #ff69b4;
+            padding: 20px;
+            width: 200px;
+            height: 150px;
+          }
+          hr {
+            border: none; /* Remove the default border */
+            height: 15px; /* Significantly increase the thickness */
+            background-color: #C71585; /* Dark shade of pink (medium violet red) */
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5); /* Add a larger shadow */
+            margin: 30px 0; /* Increase the spacing around the hr */
+            border-radius: 10px; /* Smooth the edges more */
+        }
+
+        .centerDiv {
+            border: 5px solid;
+            margin: auto;
+            width: 50%;
+            padding: 10px;
+          }
     </style>
 
 </head>
 
 
-<body style="background: #1d011a;">
+<body style="background: #7852a9;">
     <!-- Navbar I stole dis -->
 
     
-    <nav class="navbar is-light is-fluid" role="navigation" aria-label="main navigation" style="position: relative; background: #fcfbf4">
-        <div class="navbar-brand">
+    <nav class="navbar is-fluid" role="navigation" aria-label="main navigation" style="position: relative; background: #151515">
+        <div class="navbar-brand" style="background: #151515">
             <a class="navbar-item" href="{% url 'home' %}">
                 <img src="{% static 'static/amour.png' %}" alt="My image">
             </a>
@@ -61,7 +83,7 @@
             </a>
         </div>
 
-        <div id="navbarBasicExample" class="navbar-menu">
+        <div id="navbarBasicExample" class="navbar-menu" style="background: #151515">
             <div class="navbar-start">
                 <!-- if user.authenticated for these two to display in navbar -->
                 {% if user.is_authenticated %}

@@ -7,7 +7,7 @@
 {% load static %}
 
 
-    <div class="hero" style="border:2px solid black; background: #fa03e5">
+    <div class="hero" style="border:2px solid black; background:rgb(198, 7, 106)">
         <div class="hero-body">
             <center>
                 <p class="title display-1">
@@ -22,24 +22,98 @@
 <section class="section">
     <div class="container welcome-container">
       <h2 class="title display-4 center-text">Welcome to Amour</h2>
-      <div class="box" style="background: white;">
-        <p class="has-text-centered">
-          Welcome Back, <strong>{{user.username}}</strong>!<br>
-          You currently have <strong>0 matches</strong>. <br>
-          <a href="{% url 'take-survey' %}" class="button is-link">Take the Survey</a>
-        </p>
+        <div class="box" style="background:rgb(39, 38, 38); border: solid black 2px;">
+            <p class="has-text-centered" style="color: black; border: solid 3px #AA336A; background: white;">
+                Welcome Back, <strong style="color: black;">{{user.username}}</strong>!<br>
+                You currently have <strong style="color: black;">0 matches</strong>. 
+            
+                <br>
+
+                <div class="columns is-gapless" style="gap: 10px; align-items: stretch;">
+                    <div class="column is-one-third has-text-centered" style="border: solid 3px #AA336A; background: #f5f5f5;">
+                      {% if user.profile_pic %}
+                        <figure class="image is-square">
+                          <img class="is-rounded" src="{{ user.profile_pic.url }}" alt="Profile Picture" style="border: black 2px solid;">
+                        </figure>
+                        <p style="color: black;">
+                          Your Profile Picture is looking Radical!
+                        </p>
+                      {% else %}
+                        <figure class="image is-square">
+                          <img class="is-rounded" src="{% static 'default_profile.png' %}" alt="Default Profile Picture">
+                        </figure>
+                        <p style="color: black;">
+                          You might want to add a Photo so someone can see what you look like!
+                        </p>
+                      {% endif %}
+                    </div>
+                  
+                    <div class="column is-one-third has-text-centered" style="border: solid 3px #AA336A; background: #f5f5f5;">
+                      <h1 style="color: #444;">Feel free to Fix this: I want this div centered and level, maybe display survey score?</h1>
+                      <p style="color: #444;">
+                        Please Fix me Nate and Colin!
+                      </p>
+                    </div>
+                  
+                    <div class="column is-one-third has-text-centered" style="border: solid 3px #AA336A; background: #f5f5f5;">
+                      <h1 style="color: #444;">Feel free to Fix this: I want this div on the right side and level for more profile content to display</h1>
+                      <p style="color: #444;">
+                        Please Fix me Nate and Colin!
+                      </p>
+                    </div>
+                  </div>
+                    
+
+        
+                    <hr>
+                <div class=" is-fluid" style="border: solid 3px #AA336A; background: white;">
+                    <center>
+                        <br>
+                        <a class="btn-valentine roundcorners" href="{% url 'take-survey' %}" class="button is-link" >Take the Survey</a>
+                        <br>
+                        <br>
+                    </center>
+                </div>   
+            </p>
+        </div>
+
+      <div class="box" style="background: rgb(39, 38, 38); border: solid black 2px;">
+        <h5 class="subtitle is-5 center-text" style="color: black;">Tips for Dating Success:</h5>
+        <hr>
+        <br>
+            <div class="container is-fluid" style="border: solid 3px #AA336A; background: white;">
+                <ol class="tips-list">
+                <li style="color: black;">Start putting yourself out there more.</li>
+                <li style="color: black;">Find an outfit that you feel good and confident in.</li>
+                <li style="color: black;">Don't be afraid to message first, but don't double text.</li>
+                <li style="color: black;">Find someone with common interests.</li>
+                <li style="color: black;">Be yourself.</li>
+                </ol>
+            </div>
       </div>
 
-      <div class="box">
-        <h5 class="subtitle is-5 center-text">Tips for Dating Success</h5>
-        <ol class="tips-list">
-          <li>Start putting yourself out there more.</li>
-          <li>Find an outfit that you feel good and confident in.</li>
-          <li>Don't be afraid to message first, but don't double text.</li>
-          <li>Find someone with common interests.</li>
-          <li>Be yourself.</li>
-        </ol>
-      </div>
+      <br>
+
+        <div class="box" style="background:rgb(39, 38, 38); border: solid black 2px;">
+        <center>
+            <div>
+                <br>
+                <hr>
+                <h5 class="subtitle display-6 center-text" style="color: black; background: white; border: solid 3px #AA336A;">A Video to Help Get You Back On Your Feet Again: </h5>
+                    <div class="container" style="background: white; border: solid 3px #AA336A;">   
+                        <br>
+                        <hr>
+                            <p>
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/lq3vMfIpXT8?si=q4t3bTzaNKqxLpmv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </p>
+                        <hr>
+                        <br>
+                    </div>
+                <hr>
+                <br>
+            </div> 
+        </center> 
+        </div>
     </div>
     {% else %}
         <hr>
@@ -61,7 +135,7 @@
                     <img src="{% static 'static/testOne.png' %}" alt="My image" class="d-block w-100 h-50">
                     <div class="carousel-caption">
                         <h3>I Love Colin </h3>
-                        <p>Here is where Nate will put something</p>
+                        <p>Here is where Colin will put something</p>
                     </div>
                 </div>
 
