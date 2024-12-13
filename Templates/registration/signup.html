@@ -1,3 +1,4 @@
+<!--Amour/Templates/registration/signup.html-->
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% block title %}Sign Up{% endblock title %}
@@ -6,6 +7,6 @@
     <h2>Sign Up</h2>
     <form method="post" enctype="multipart/form-data">{% csrf_token %}<!--Added in "enctype" as part of profile pic work-->
         {{ form|crispy }}
-    <button class="btn btn-success" type="submit">Sign Up</button>
+    <button class="btn btn-valentine" type="submit">Sign Up</button>
     </form>
 {% endblock content %}

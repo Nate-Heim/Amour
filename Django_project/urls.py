@@ -23,7 +23,7 @@ from django.contrib.auth import views as auth_views
 from accounts.views import profile_view
 from django.conf import settings
 from django.conf.urls.static import static
-from chat import views
+from accounts.views import ResetPasswordView
 
 
 urlpatterns = [
@@ -37,8 +37,8 @@ urlpatterns = [
     path('profile/', profile_view, name='profile'),
     path('chat/', include('chat.urls')),
     path('survey/', include("survey.urls")),
+    path("accounts/", include("django.contrib.auth.urls")),
 ]
-
 #Think this needs to be in Django urls as well to serve the photo
 
 #Profile Pic related work (Under work by Colin DONT TOUCH!!)

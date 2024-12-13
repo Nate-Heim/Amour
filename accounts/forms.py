@@ -19,6 +19,18 @@ class CustomerUserCreationForm(UserCreationForm):
             "interests",
             "bio",
         )
+        widgets = {
+            "username": forms.TextInput(attrs={"class": "form-control is-peach"}),
+            "email": forms.EmailInput(attrs={"class": "form-control is-peach"}),
+            "age": forms.NumberInput(attrs={"class": "form-control is-peach"}),
+            "Gender": forms.TextInput(attrs={"class": "form-control is-peach"}),
+            "Desires": forms.Select(attrs={"class": "form-control is-peach"}),
+            "profile_pic": forms.FileInput(attrs={"class": "form-control is-peach"}),
+            "interests": forms.Textarea(
+                attrs={"class": "form-control is-peach", "rows": 5}
+            ),
+            "bio": forms.Textarea(attrs={"class": "form-control is-peach", "rows": 3}),
+        }
 
     class Meta:
         model = CustomUser
@@ -49,9 +61,12 @@ class ProfileForm(forms.ModelForm):
         model = CustomUser
         fields = ['profile_pic', 'Desires', 'age', 'Gender', 'interests', 'bio']
         widgets = {
-            'Desires': forms.Select(attrs={'class': 'form-control'}),
-            'bio': forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
-            'interests': forms.Textarea(attrs={'class': 'form-control', 'rows': 5}),
+            'profile_pic': forms.FileInput(attrs={'class': 'form-control is-peach'}),
+            'Desires': forms.Select(attrs={'class': 'form-control is-peach'}),
+            'age': forms.NumberInput(attrs={'class': 'form-control is-peach'}),
+            'Gender': forms.TextInput(attrs={'class': 'form-control is-peach'}),
+            'bio': forms.Textarea(attrs={'class': 'form-control is-peach', 'rows': 3}),
+            'interests': forms.Textarea(attrs={'class': 'form-control is-peach', 'rows': 5}),
         }
 class CaptchatestForm(forms.Form):
     myfield= forms.CharField(label="My Field", max_length=100)

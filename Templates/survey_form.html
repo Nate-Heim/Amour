@@ -1,26 +1,51 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}Take Survey{% endblock %}
 
 {% block content %}
+
 <section class="section">
     <div class="container">
-        <h1 class="title">Take Survey</h1>
+        <div style="border: 2px solid black;
+        margin: auto;
+        background-repeat: no-repeat;
+        background-size: cover; /* or contain, depending on your needs */
+        background-position: center;
+        background-image: url("{% static 'static/lovePhotoSurvey.png' %}");
+        height: 100%; width: 100%;">
+
+            <center>
+                <br>
+                <div class="bodyThing" style="background: white; border: solid black 0.5px;">
+                    <h1 class="title" style="text: black bold;">Help Us Help You - Take The Survey</h1>
+                </div>
+                <br>
         <form method="post">
             {% csrf_token %}
-            {% for field in form %}
-                <div class="field">
-                    <label class="label">{{ field.label }}</label>
-                    <div class="control">
-                        {{ field }}
-                        {% if field.errors %}
-                            <p class="help is-danger">{{ field.errors }}</p>
-                        {% endif %}
+            
+                
+                {% for field in form %}
+                
+                    <div class="container is-fluid" style="background: white; border: black 2px solid; width: 75%;">
+                        <div class="field">
+                            <label class="label">{{ field.label }}</label>
+                            <div class="control">
+                            
+                                {{ field }}
+                            
+                                {% if field.errors %}
+                                    <p class="help is-danger">{{ field.errors }}</p>
+                                {% endif %}
+                            </div>
+                        </div>
                     </div>
-                </div>
-            {% endfor %}
+                
+                {% endfor %}
+            </div>
+            <br>
+            <hr>
             <div class="control">
-                <button type="submit" class="button is-primary">Submit</button>
+                <button type="submit" class="btn-valentine">Submit</button>
             </div>
         </form>
     </div>

@@ -26,7 +26,7 @@
                             </figure>
                         {% endif %}
                         <label class="label">Update Profile Picture</label>
-                        <input class="input" type="file" name="profile_pic">
+                        <input class="input is-peach" type="file" name="profile_pic">
                     </div>
                 </li>
 
@@ -34,7 +34,7 @@
                 <li>
                     <div class="field">
                         <label class="label">Age</label>
-                        <input class="input" type="number" name="age" value="{{ user.age }}">
+                        <input class="input is-peach" type="number" name="age" value="{{ user.age }}">
                     </div>
                 </li>
 
@@ -42,7 +42,7 @@
                 <li>
                     <div class="field">
                         <label class="label">Gender</label>
-                        <input class="input" type="text" name="Gender" value="{{ user.Gender }}">
+                        <input class="input is-peach" type="text" name="Gender" value="{{ user.Gender }}">
                     </div>
                 </li>
 
@@ -50,7 +50,7 @@
                 <li>
                     <div class="field">
                         <label class="label">Looking For</label>
-                        <select class="input" name="desires">
+                        <select class="input is-peach" name="desires">
                             {% for value, label in desires_choices %}
                                 <option value="{{ value }}" {% if user.desires == value %}selected{% endif %}>
                                     {{ label }}
@@ -64,7 +64,7 @@
                 <li>
                     <div class="field">
                         <label class="label">Bio</label>
-                        <textarea class="textarea" name="bio" rows="3" placeholder="Write a short bio about yourself">{{ user.bio }}</textarea>
+                        <textarea class="textarea is-peach" name="bio" rows="3" placeholder="Write a short bio about yourself">{{ user.bio }}</textarea>
                     </div>
                 </li>
 
@@ -72,7 +72,7 @@
                 <li>
                     <div class="field">
                         <label class="label">Interests</label>
-                        <textarea class="textarea" name="interests" rows="5" placeholder="Write about your interests">{{ user.interests }}</textarea>
+                        <textarea class="textarea is-peach" name="interests" rows="5" placeholder="Write about your interests">{{ user.interests }}</textarea>
                     </div>
                 </li>
             </ul>
