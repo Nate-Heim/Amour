@@ -10,11 +10,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="{% static 'static/css/amourTitle.css' %}"></link>
-    <link rel="icon" href="{% static 'static/heart.ico' %}">
-    <!-- Add Google Fonts -->
+    <link rel="icon" href="{% static 'static/heart.ico' %}"> <!-- Add Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+<<<<<<< HEAD
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
 
+=======
+>>>>>>> 9a6b16f7150c1735e4231d15572dc4b59cc68842
     <style>
         /*Adding in some new "Valentine-esque" button ideas I had. Just using on password remake for now*/
         .btn-valentine {
@@ -69,14 +71,10 @@
         .is-peach {
             background-color: peachpuff; /*fOR FORM PEACH LAYOUT*/
             border-color: #f5b7b1; 
+            color: #333;
         }
-
-        .bodyThing {
-            background-image: url("{% static 'static/lovePhotoSurvey.png' %}");
-            background-size: cover; /* Ensures the image covers the entire background /
-            background-repeat: no-repeat; / Prevents the image from repeating /
-            background-attachment: fixed; / Keeps the image fixed when scrolling /
-            background-position: center; / Centers the image /
+        .custom-white-text {
+            color: white;
         }
     </style>
 
@@ -103,9 +101,9 @@
             <div class="navbar-start">
                 <!-- if user.authenticated for these two to display in navbar -->
                 {% if user.is_authenticated %}
-                    <a class="navbar-item" href="{% url 'profile' %}">Profile</a>
-                    <a class="navbar-item"href="matchPage.html">Matches</a>
-                    <a class="navbar-item" href="{% url 'chatPage' room_name='default' %}">Chat</a>
+                    <a class="navbar-item custom-white-text" href="{% url 'profile' %}">Profile</a>
+                    <a class="navbar-item custom-white-text"href="matchPage.html">Matches</a>
+                    <a class="navbar-item custom-white-text" href="{% url 'chatPage' room_name='default' %}">Chat</a>
                 <!-- Sign out Options included Here need to be fixed the link directs you to login and sign up-->
                     <div class="navbar-end">
                         <div class="navbar-item">

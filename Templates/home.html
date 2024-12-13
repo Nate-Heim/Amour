@@ -26,7 +26,8 @@
 
                 <div class="columns is-gapless is-vcentered">
                     <!-- Profile Picture -->
-                    <div class="column has-text-centered" style="border: solid 3px #AA336A; background: #f5f5f5; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 250px;">
+                    <div class="column has-text-centered" 
+                        style="border: solid 3px #AA336A; background: #f5f5f5; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 250px; transition: background-color 0.3s ease;">
                         {% if user.profile_pic %}
                             <figure class="image is-128x128">
                                 <img class="is-rounded" src="{{ user.profile_pic.url }}" alt="Profile Picture" style="border: black 2px solid;">
@@ -39,7 +40,7 @@
                             <p style="color: black; margin-top: 10px;">You might want to add a photo so someone can see what you look like!</p>
                         {% endif %}
                     </div>
-
+                
                     <!-- Work in Progress Section -->
                     <div class="column has-text-centered" 
                         style="border: solid 3px #AA336A; 
@@ -52,7 +53,8 @@
                                 overflow-y: auto; 
                                 padding: 1rem; 
                                 border-radius: 8px; 
-                                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+                                transition: background-color 0.3s ease;">
                         <h1 style="color: #AA336A; font-family: 'Poppins', sans-serif; font-weight: 600; margin-bottom: 15px;">Your Survey Answers</h1>
                         {% if responses %}
                             <ul style="text-align: left; list-style-type: none; padding: 0; width: 100%; font-family: 'Roboto', sans-serif;">
@@ -67,14 +69,65 @@
                             <p style="color: #666; font-family: 'Roboto', sans-serif;">No answers found. Please complete the survey!</p>
                         {% endif %}
                     </div>
-
+                
                     <!-- Profile Content -->
-                    <div class="column has-text-centered" style="border: solid 3px #AA336A; background: #f5f5f5; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; height: 250px; padding: 1rem; overflow-y: auto;">
+                    <div class="column has-text-centered" 
+                        style="border: solid 3px #AA336A; background: #f5f5f5; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; height: 250px; padding: 1rem; overflow-y: auto; transition: background-color 0.3s ease;">
                         <h1 style="color: #444; margin-bottom: 10px;">Profile Content</h1>
-                        <p style="color: #444; word-wrap: break-word; margin-bottom: 5px;">Bio: {{ user.bio|default:"Not provided yet" }}</p>
-                        <p style="color: #444; word-wrap: break-word;">Interests: {{ user.interests|default:"Not provided yet" }}</p>
+                        <p style="color: #444; word-wrap: break-word; margin-bottom: 5px;"><b>Bio:</b>
+                            <span class="typing-bio">{{ user.bio|default:"Not provided yet" }}</span>
+                        </p>
+                        <p style="color: #444; word-wrap: break-word; text: bold;"><b>Interests:</b> 
+                            <span class="typing-interests">{{ user.interests|default:"Not provided yet" }}</span>
+                        </p>
                     </div>
                 </div>
+                
+                <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    // Typing Effect Function
+                    const typeEffect = (element, text, speed = 50) => {
+                        element.textContent = ''; // Clear the content to type it out
+                        let index = 0;
+                
+                        const type = () => {
+                            if (index < text.length) {
+                                element.textContent += text[index];
+                                index++;
+                                setTimeout(type, speed); // Adjust typing speed
+                            }
+                        };
+                
+                        type();
+                    };
+                
+                    // Typing Effect for Bio
+                    const bioElement = document.querySelector('.typing-bio');
+                    if (bioElement) {
+                        const bioText = bioElement.textContent;
+                        typeEffect(bioElement, bioText);
+                    }
+                
+                    // Typing Effect for Interests
+                    const interestsElement = document.querySelector('.typing-interests');
+                    if (interestsElement) {
+                        const interestsText = interestsElement.textContent;
+                        typeEffect(interestsElement, interestsText);
+                    }
+                
+                    // Hover Effect for Columns
+                    const columns = document.querySelectorAll('.columns .column');
+                    columns.forEach(column => {
+                        column.addEventListener('mouseover', () => {
+                            column.style.backgroundColor = '#e0e0e0';
+                        });
+                        column.addEventListener('mouseout', () => {
+                            column.style.backgroundColor = '#f5f5f5';
+                        });
+                    });
+                });
+                </script>
+                
 
                 <hr>
                 <div class="is-fluid" style="border: solid 3px #AA336A; background: white;">
