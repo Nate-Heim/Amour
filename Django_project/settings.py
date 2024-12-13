@@ -12,9 +12,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-1eu9s@@c&(am8q5*7xhfbf%%li@=4e7quicx(dy_(uyl!s8j8k"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    
     # Below are some of the thrid party applications we used, as well as a few we made
     "publicPages",  # Where all of the Urls are are connected
     "accounts",  # This is where user data is stored
@@ -34,10 +35,12 @@ INSTALLED_APPS = [
     "crispy_bootstrap5",
     "debug_toolbar",  # To help us Troubleshoot
     "captcha",  # Captcha Tool Used For Extra Security Measures
-    "django_private_chat2.apps.DjangoPrivateChat2Config",  # Chat Functionality
+    "django_private_chat2.apps.DjangoPrivateChat2Config",  # Chat Functionality not fully functioning but sends alerts
     "channels",
     "chat", # CURRENTLY WORKING ON!!!
     "survey",
+    "gunicorn",
+    "decouple",
 ]
 
 
