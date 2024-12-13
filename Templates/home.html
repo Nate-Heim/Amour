@@ -19,38 +19,38 @@
 <section class="section">
     <div class="container welcome-container">
         <h2 class="title display-4 center-text">Welcome to Amour</h2>
-        <div class="box" style="background:rgb(39, 38, 38); border: solid black 2px;">
+        <div class="box" style="background: rgb(39, 38, 38); border: solid black 2px;">
             <p class="has-text-centered" style="color: black; border: solid 3px #AA336A; background: white;">
                 Welcome Back, <strong style="color: black;">{{ user.username }}</strong>!<br>
-                You currently have <strong style="color: black;">0 matches</strong>. 
+                You currently have <strong style="color: black;">0 matches</strong>.
 
-                <div class="columns is-gapless" style="gap: 10px; align-items: stretch;">
+                <div class="columns is-gapless is-vcentered">
                     <!-- Profile Picture -->
-                    <div class="column is-one-third has-text-centered" style="border: solid 3px #AA336A; background: #f5f5f5;">
+                    <div class="column has-text-centered" style="border: solid 3px #AA336A; background: #f5f5f5; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 250px;">
                         {% if user.profile_pic %}
-                            <figure class="image is-square">
+                            <figure class="image is-128x128">
                                 <img class="is-rounded" src="{{ user.profile_pic.url }}" alt="Profile Picture" style="border: black 2px solid;">
                             </figure>
-                            <p style="color: black;">Your Profile Picture is looking Radical!</p>
+                            <p style="color: black; margin-top: 10px;">Your Profile Picture is looking Radical!</p>
                         {% else %}
-                            <figure class="image is-square">
+                            <figure class="image is-128x128">
                                 <img class="is-rounded" src="{% static 'default_profile.png' %}" alt="Default Profile Picture">
                             </figure>
-                            <p style="color: black;">You might want to add a photo so someone can see what you look like!</p>
+                            <p style="color: black; margin-top: 10px;">You might want to add a photo so someone can see what you look like!</p>
                         {% endif %}
                     </div>
 
                     <!-- Work in Progress Section -->
-                    <div class="column is-one-third has-text-centered" style="border: solid 3px #AA336A; background: #f5f5f5;">
+                    <div class="column has-text-centered" style="border: solid 3px #AA336A; background: #f5f5f5; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 250px;">
                         <h1 style="color: #444;">Work in Progress</h1>
                         <p style="color: #444;">This section is under construction!</p>
                     </div>
 
                     <!-- Profile Content -->
-                    <div class="column is-one-third has-text-centered" style="border: solid 3px #AA336A; background: #f5f5f5; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
-                        <h1 style="color: #444;">Profile Content</h1>
-                        <p style="color: #444;">Bio: {{ user.bio|default:"Not provided yet" }}</p>
-                        <p style="color: #444;">Interests: {{ user.interests|default:"Not provided yet" }}</p>
+                    <div class="column has-text-centered" style="border: solid 3px #AA336A; background: #f5f5f5; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; height: 250px; padding: 1rem; overflow-y: auto;">
+                        <h1 style="color: #444; margin-bottom: 10px;">Profile Content</h1>
+                        <p style="color: #444; word-wrap: break-word; margin-bottom: 5px;">Bio: {{ user.bio|default:"Not provided yet" }}</p>
+                        <p style="color: #444; word-wrap: break-word;">Interests: {{ user.interests|default:"Not provided yet" }}</p>
                     </div>
                 </div>
 
@@ -64,52 +64,143 @@
                 </div>
             </p>
         </div>
+    </div>
+</section>
 
-        <div class="box" style="background: rgb(39, 38, 38); border: solid black 2px;">
-            <h5 class="subtitle is-5 center-text" style="color: black;">Tips for Dating Success:</h5>
-            <hr>
-            <br>
-            <div class="container is-fluid" style="border: solid 3px #AA336A; background: white;">
-                <ol class="tips-list">
-                    <li style="color: black;">Start putting yourself out there more.</li>
-                    <li style="color: black;">Find an outfit that you feel good and confident in.</li>
-                    <li style="color: black;">Don't be afraid to message first, but don't double text.</li>
-                    <li style="color: black;">Find someone with common interests.</li>
-                    <li style="color: black;">Be yourself.</li>
-                </ol>
+<div class="box" style="background: rgb(39, 38, 38); border: solid black 2px;">
+    <h5 class="subtitle is-5 center-text" style="color: black;">Tips for Dating Success:</h5>
+    <hr>
+    <br>
+    <div class="container is-fluid" style="border: solid 3px #AA336A; background: white;">
+        <ol class="tips-list">
+            <li style="color: black;">Start putting yourself out there more.</li>
+            <li style="color: black;">Find an outfit that you feel good and confident in.</li>
+            <li style="color: black;">Don't be afraid to message first, but don't double text.</li>
+            <li style="color: black;">Find someone with common interests.</li>
+            <li style="color: black;">Be yourself.</li>
+        </ol>
+    </div>
+</div>
+</div>
+</section>
+<br>
+
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh; background: rgb(39, 38, 38);">
+    <div class="box" style="border: solid black 2px; display: inline-block; padding: 1rem; background: #FFC0CB; border-radius: 8px;">
+        <center>
+            <div class="box has-text-centered" style="border: 3px solid #AA336A; max-width: 400px; margin: 0 auto; padding: 1rem; background: rgba(255, 192, 203, 0.8);">
+                <h5 class="subtitle is-5 has-text-black" style="font-family: 'Great Vibes', cursive;">
+                    When life knocks you down, get back up. It's easy to feel defeated, but remember that every setback is an opportunity to learn and grow. Don't give up on your dreams, keep pushing forward, and never stop believing in yourself. You have the strength to overcome any obstacle, and you will emerge stronger than ever before.
+                </h5>
             </div>
-        </div>
-
-        <br>
-
-        <div style="display: flex; justify-content: center; align-items: center; height: 100vh; background: rgb(39, 38, 38);">
-            <div class="box" style="border: solid black 2px; display: inline-block; padding: 1rem; background: #FFC0CB; border-radius: 8px;">
-                <center>
-                    <div class="box has-text-centered" style="border: 3px solid #AA336A; max-width: 400px; margin: 0 auto; padding: 1rem; background: rgba(255, 192, 203, 0.8);">
-                        <h5 class="subtitle is-5 has-text-black" style="font-family: 'Great Vibes', cursive;">
-                            When life knocks you down, get back up. It's easy to feel defeated, but remember that every setback is an opportunity to learn and grow. Don't give up on your dreams, keep pushing forward, and never stop believing in yourself. You have the strength to overcome any obstacle, and you will emerge stronger than ever before.
-                        </h5>
-                    </div>
-                    <div class="box" style="background: white; border: solid 3px #AA336A; display: inline-block; padding: 0; margin-top: 1rem;">
-                        <iframe 
-                            width="560" 
-                            height="315" 
-                            src="https://www.youtube.com/embed/lq3vMfIpXT8?si=q4t3bTzaNKqxLpmv" 
-                            title="YouTube video player" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin" 
-                            allowfullscreen
-                            style="border: none; display: block; margin: 0;">
-                        </iframe>
-                    </div>
-                </center>
+            <div class="box" style="background: white; border: solid 3px #AA336A; display: inline-block; padding: 0; margin-top: 1rem;">
+                <iframe 
+                    width="560" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/lq3vMfIpXT8?si=q4t3bTzaNKqxLpmv" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen
+                    style="border: none; display: block; margin: 0;">
+                </iframe>
             </div>
-        </div>
+        </center>
+    </div>
+</div>
 </section>
 {% else %}
-    <div class="notification is-warning">
-        <p>Please log in to see your profile and personalized content.</p>
+<section class="section">
+    <div class="container">
+        <div class="notification is-warning has-text-centered">
+            <p>Please log in to see your profile and personalized content.</p>
+        </div>
+        <hr>
+        <div id="demo" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+            </div>
+
+            <!-- Carousel Content -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{% static 'static/testOne.png' %}" alt="First Slide" class="d-block w-100">
+                    <div class="carousel-caption">
+                        <h3>I Love Colin</h3>
+                        <p>Here is where Colin will put something</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'static/testTwo.png' %}" alt="Second Slide" class="d-block w-100">
+                    <div class="carousel-caption">
+                        <h3>I Love Nate</h3>
+                        <p>Here is where Nate will put something</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'static/testThree.png' %}" alt="Third Slide" class="d-block w-100">
+                    <div class="carousel-caption">
+                        <h3>I Love Haiden</h3>
+                        <p>Here is where Haiden will put something</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+
+        <!-- Informational Cards -->
+        <div class="columns is-multiline mt-5">
+            <div class="column is-one-third">
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image is-6by5">
+                            <img src="{% static 'static/stockImageTwo.png' %}" alt="Sign Up">
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <p class="title is-5">Create a Profile</p>
+                        <p>Signing up is quick and easy!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-one-third">
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image is-6by5">
+                            <img src="{% static 'static/stockImageOne.png' %}" alt="Discover">
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <p class="title is-5">Discover Something Real!</p>
+                        <p>Explore profiles and find people who share your interests.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-one-third">
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image is-6by5">
+                            <img src="{% static 'static/stockImageThree.png' %}" alt="Start Chatting">
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <p class="title is-5">Start Chatting Today</p>
+                        <p>Start conversations and build meaningful connections.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+</section>
 {% endif %}
 {% endblock %}
