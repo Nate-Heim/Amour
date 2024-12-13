@@ -1,4 +1,4 @@
-<!--Amour/Templates/profileEdit.html-->
+<!-- Amour/Templates/profile.html -->
 {% extends "base.html" %}
 {% load static %}
 {% block title %}Profile{% endblock title %}
@@ -11,28 +11,31 @@
             <div class="column is-one-third has-text-centered">
                 {% if user.profile_pic %}
                     <figure class="image is-square">
-                        <img class="is-rounded" src="{{ user.profile_pic.url }}" alt="Profile Picture"  style="border: black 2px solid;">
+                        <img class="is-rounded" src="{{ user.profile_pic.url }}" alt="Profile Picture" style="border: black 2px solid;">
                     </figure>
                 {% else %}
                     <figure class="image is-square">
-                        <img class="is-rounded" src="{% static 'default_profile.png' %}" alt="Default Profile Picture" >
+                        <img class="is-rounded" src="{% static 'default_profile.png' %}" alt="Default Profile Picture">
                     </figure>
                 {% endif %}
             </div>
 
             <!-- Right Column for Profile Info -->
             <div class="column">
+                <div class="notification is-primary has-background-grey" style="border: black 2px solid;">
+                    <h1 class="title display-7" style="color: black;">{{ user.username }}</h1>
+                    <p><strong>Email:</strong> {{ user.email }}</p>
+                    <p><strong>Age:</strong> {{ user.age }}</p>
+                    <p><strong>Gender:</strong> {{ user.Gender }}</p>
+                    <p><strong>Looking for:</strong> {{ user.Desires|capfirst }}</p>
+                    
+                    <!-- New fields: Bio and Interests -->
+                    <p><strong>Bio:</strong> {% if user.bio %}{{ user.bio }}{% else %}Not provided{% endif %}</p>
+                    <p><strong>Interests:</strong> {% if user.interests %}{{ user.interests }}{% else %}Not provided{% endif %}</p>
 
-                      <div class="notification is-primary has-background-grey"  style="border: black 2px solid;">
-                        <h1 class="title display-7" style="color: black;">{{ user.username }}</h1>
-                        <p><strong>Email:</strong> {{ user.email }}</p>
-                        <p><strong>Age:</strong> {{ user.age }}</p>
-                        <p><strong>Gender:</strong> {{ user.Gender }}</p>
-                        <p><strong>Looking for:</strong> {{ user.Desires|capfirst }}</p>
-                        <!-- Optionally, you can add a button to navigate to the edit profile page -->
-                        <a href="{% url 'profile_edit' %}" class="btn btn-valentine">Edit Profile</a>
-                          
-                      </div>
+                    <!-- Edit Profile Button -->
+                    <a href="{% url 'profile_edit' %}" class="btn btn-valentine">Edit Profile</a>
+                </div>
             </div>
         </div>
     </div>

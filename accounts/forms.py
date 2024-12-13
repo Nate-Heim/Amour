@@ -1,25 +1,24 @@
-#Amoout/accounts/forms
+#Amour/accounts/forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from .models import CustomUser
 from django import forms
 from captcha.fields import CaptchaField
 
 class CustomerUserCreationForm(UserCreationForm):
-    captcha = CaptchaField()#adds the captcha
-    
-    DESIRE_CHOICES = [
-    ('relationship', 'Relationship'),
-    ('friendship', 'Friendship'),
-    ('fling', 'Fling'),
-    ('other', 'Other'),
-    ('soulmate', 'Soulmate'),
-]
-    Desires = forms.ChoiceField(
-    choices=DESIRE_CHOICES,
-    label="What are you looking for?",
-    required=True,
-    widget=forms.Select(attrs={"class": "form-control"}) #This was optional and it just adds some CSS classes
-)
+    captcha = CaptchaField()
+
+    class Meta:
+        model = CustomUser
+        fields = (
+            "username",
+            "email",
+            "age",
+            "Gender",
+            "Desires",
+            "profile_pic",
+            "interests",
+            "bio",
+        )
 
     class Meta:
         model = CustomUser
@@ -48,9 +47,11 @@ class CustomUserChangeForm(UserChangeForm):
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = CustomUser
-        fields = ['profile_pic', 'Desires', 'age', 'Gender']
+        fields = ['profile_pic', 'Desires', 'age', 'Gender', 'interests', 'bio']
         widgets = {
-            'desires': forms.Select(attrs={'class': 'form-control'}),
+            'Desires': forms.Select(attrs={'class': 'form-control'}),
+            'bio': forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
+            'interests': forms.Textarea(attrs={'class': 'form-control', 'rows': 5}),
         }
 class CaptchatestForm(forms.Form):
     myfield= forms.CharField(label="My Field", max_length=100)

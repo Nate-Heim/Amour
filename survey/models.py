@@ -30,4 +30,4 @@ class UserResponse(models.Model):
     response = models.TextField()  # Store the user's response
 
     def __str__(self):
-        return f"Response to {self.question}"
+        return f"Response to {self.question} by {self.user}"

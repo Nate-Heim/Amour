@@ -20,14 +20,17 @@ def profile_view(request):
         user = request.user
         user.age = request.POST.get('age')
         user.Gender = request.POST.get('Gender')
-        user.desires = request.POST.get('desires')
+        user.Desires = request.POST.get('Desires')
+        user.interests = request.POST.get('interests')
+        user.bio = request.POST.get('bio')
         if request.FILES.get('profile_pic'):
             user.profile_pic = request.FILES['profile_pic']
         user.save()
         return redirect('profile')
-    
+
     desires_choices = CustomUser._meta.get_field('Desires').choices
     return render(request, 'profile.html', {'desires_choices': desires_choices})
+
 
 @login_required
 def edit_profile(request):
@@ -35,12 +38,14 @@ def edit_profile(request):
         user = request.user
         user.age = request.POST.get('age')
         user.Gender = request.POST.get('Gender')
-        user.desires = request.POST.get('desires')
+        user.Desires = request.POST.get('Desires')
+        user.interests = request.POST.get('interests')
+        user.bio = request.POST.get('bio')
         if request.FILES.get('profile_pic'):
             user.profile_pic = request.FILES['profile_pic']
         user.save()
         messages.success(request, 'Profile updated successfully!')
-        return redirect('profile')  # Redirect to the profile view after saving
+        return redirect('profile')
 
     desires_choices = CustomUser._meta.get_field('Desires').choices
     return render(request, 'profileEdit.html', {'user': request.user, 'desires_choices': desires_choices})

@@ -59,6 +59,22 @@
                         </select>
                     </div>
                 </li>
+
+                <!-- Bio -->
+                <li>
+                    <div class="field">
+                        <label class="label">Bio</label>
+                        <textarea class="textarea" name="bio" rows="3" placeholder="Write a short bio about yourself">{{ user.bio }}</textarea>
+                    </div>
+                </li>
+
+                <!-- Interests -->
+                <li>
+                    <div class="field">
+                        <label class="label">Interests</label>
+                        <textarea class="textarea" name="interests" rows="5" placeholder="Write about your interests">{{ user.interests }}</textarea>
+                    </div>
+                </li>
             </ul>
 
             <!-- Submit Button -->
