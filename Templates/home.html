@@ -83,10 +83,11 @@
                     </div>
                 </div>
                 
+                <!-- Javascript for Typing Effect to present Bio and Interests -->
                 <script>
                 document.addEventListener('DOMContentLoaded', () => {
                     // Typing Effect Function
-                    const typeEffect = (element, text, speed = 50) => {
+                    const typeEffect = (element, text, speed = 100) => {
                         element.textContent = ''; // Clear the content to type it out
                         let index = 0;
                 
@@ -122,7 +123,7 @@
                             column.style.backgroundColor = '#e0e0e0';
                         });
                         column.addEventListener('mouseout', () => {
-                            column.style.backgroundColor = '#f5f5f5';
+                            column.style.backgroundColor = '#301934';
                         });
                     });
                 });
@@ -202,21 +203,21 @@
             <!-- Carousel Content -->
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="{% static 'static/testOne.png' %}" alt="First Slide" class="d-block w-100">
+                    <img src="{% static 'testOne.png' %}" alt="First Slide" class="d-block w-100">
                     <div class="carousel-caption">
                         <h3>I Love Colin</h3>
                         <p>Here is where Colin will put something</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="{% static 'static/testTwo.png' %}" alt="Second Slide" class="d-block w-100">
+                    <img src="{% static 'testTwo.png' %}" alt="Second Slide" class="d-block w-100">
                     <div class="carousel-caption">
                         <h3>I Love Nate</h3>
                         <p>Here is where Nate will put something</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="{% static 'static/testThree.png' %}" alt="Third Slide" class="d-block w-100">
+                    <img src="{% static 'testThree.png' %}" alt="Third Slide" class="d-block w-100">
                     <div class="carousel-caption">
                         <h3>I Love Haiden</h3>
                         <p>Here is where Haiden will put something</p>
@@ -239,7 +240,7 @@
                 <div class="card">
                     <div class="card-image">
                         <figure class="image is-6by5">
-                            <img src="{% static 'static/stockImageTwo.png' %}" alt="Sign Up">
+                            <img src="{% static 'stockImageTwo.png' %}" alt="Sign Up">
                         </figure>
                     </div>
                     <div class="card-content">
@@ -252,7 +253,7 @@
                 <div class="card">
                     <div class="card-image">
                         <figure class="image is-6by5">
-                            <img src="{% static 'static/stockImageOne.png' %}" alt="Discover">
+                            <img src="{% static 'stockImageOne.png' %}" alt="Discover">
                         </figure>
                     </div>
                     <div class="card-content">
@@ -265,7 +266,7 @@
                 <div class="card">
                     <div class="card-image">
                         <figure class="image is-6by5">
-                            <img src="{% static 'static/stockImageThree.png' %}" alt="Start Chatting">
+                            <img src="{% static 'stockImageThree.png' %}" alt="Start Chatting">
                         </figure>
                     </div>
                     <div class="card-content">
