@@ -5,22 +5,30 @@
 {% block content %}
 <section class="section">
     <div class="container">
-        <h1 class="title">Take Survey</h1>
+        <h1 class="title">Help Us Help You - Take The Survey</h1>
         <form method="post">
             {% csrf_token %}
+            
             {% for field in form %}
+            
+            <div class="container is-fluid" style="background: white; border: black 2px solid;">
                 <div class="field">
                     <label class="label">{{ field.label }}</label>
                     <div class="control">
+                    
                         {{ field }}
+                    
                         {% if field.errors %}
                             <p class="help is-danger">{{ field.errors }}</p>
                         {% endif %}
                     </div>
                 </div>
+            </div>
+            
             {% endfor %}
+
             <div class="control">
-                <button type="submit" class="button is-primary">Submit</button>
+                <button type="submit" class="btn-valentine">Submit</button>
             </div>
         </form>
     </div>
