@@ -38,6 +38,7 @@ urlpatterns = [
     path('chat/', include('chat.urls')),
     path('survey/', include("survey.urls")),
     path("accounts/", include("django.contrib.auth.urls")),
+    path('match/', include('match.urls')),
 ]
 #Think this needs to be in Django urls as well to serve the photo
 

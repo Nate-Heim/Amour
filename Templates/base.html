@@ -12,11 +12,6 @@
     <link rel="stylesheet" href="{% static 'static/css/amourTitle.css' %}"></link>
     <link rel="icon" href="{% static 'static/heart.ico' %}"> <!-- Add Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
-<<<<<<< HEAD
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
-
-=======
->>>>>>> 9a6b16f7150c1735e4231d15572dc4b59cc68842
     <style>
         /*Adding in some new "Valentine-esque" button ideas I had. Just using on password remake for now*/
         .btn-valentine {
@@ -102,7 +97,7 @@
                 <!-- if user.authenticated for these two to display in navbar -->
                 {% if user.is_authenticated %}
                     <a class="navbar-item custom-white-text" href="{% url 'profile' %}">Profile</a>
-                    <a class="navbar-item custom-white-text"href="matchPage.html">Matches</a>
+                    <a class="navbar-item custom-white-text" href="{% url 'find_matches' %}">Matches</a>
                     <a class="navbar-item custom-white-text" href="{% url 'chatPage' room_name='default' %}">Chat</a>
                 <!-- Sign out Options included Here need to be fixed the link directs you to login and sign up-->
                     <div class="navbar-end">

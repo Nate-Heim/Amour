@@ -1,5 +1,6 @@
 # Amour/accounts/models.py
 from django.contrib.auth.models import AbstractUser
+from survey.models import UserResponse
 from django.db import models
 
 
@@ -41,3 +42,22 @@ class CustomUser(AbstractUser):
         null=True,
         blank=True,
     )
+
+    def calculate_match_percentage(self, other_user):
+        user1_responses = UserResponse.objects.filter(user=self)
+        user2_responses = UserResponse.objects.filter(user=other_user)
+
+        if not user1_responses.exists() or not user2_responses.exists():
+            return 0
+
+        user1_dict = {response.question.id: response.response for response in user1_responses}
+        user2_dict = {response.question.id: response.response for response in user2_responses}
+
+        common_questions = set(user1_dict.keys()).intersection(set(user2_dict.keys()))
+        if not common_questions:
+            return 0
+
+        matching_answers = sum(
+            1 for qid in common_questions if user1_dict[qid] == user2_dict[qid]
+        )
+        return (matching_answers / len(common_questions)) * 100
